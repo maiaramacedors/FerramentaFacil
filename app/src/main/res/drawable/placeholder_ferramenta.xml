@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Exibido enquanto a foto da ferramenta carrega ou quando não há foto -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/cinza_placeholder" />
+        </shape>
+    </item>
+    <item
+        android:width="40dp"
+        android:height="40dp"
+        android:drawable="@drawable/ic_build"
+        android:gravity="center" />
+</layer-list>

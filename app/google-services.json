@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "897304617889",
+    "project_id": "ferramentafacil-a2f6b",
+    "storage_bucket": "ferramentafacil-a2f6b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897304617889:android:72af7953430d40f59c61e0",
+        "android_client_info": {
+          "package_name": "com.ferramentafacil.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5YaSs_D22SYRYhe4BCAOwCtDeYPbkNIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

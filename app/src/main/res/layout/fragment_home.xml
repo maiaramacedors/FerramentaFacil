@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fundo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- Cabeçalho -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvSaudacao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Olá!"
+                            tools:text="Olá, João!"
+                            android:textColor="@color/branco"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Qual ferramenta você precisa hoje?"
+                            android:textColor="@color/branco" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="48dp"
+                        android:layout_height="48dp">
+
+                        <ImageButton
+                            android:id="@+id/btnNotificacoes"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/bg_circulo_translucido"
+                            android:contentDescription="Notificações"
+                            android:src="@drawable/ic_notifications"
+                            app:tint="@color/branco" />
+
+                        <TextView
+                            android:id="@+id/tvBadge"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="top|end"
+                            android:background="@drawable/bg_badge"
+                            android:gravity="center"
+                            android:textColor="@color/branco"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Localização atual -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_location"
+                        app:tint="@color/branco" />
+
+                    <TextView
+                        android:id="@+id/tvLocalizacao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Definindo sua localização..."
+                        tools:text="Indaiatuba - SP"
+                        android:textColor="@color/branco"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/btnAlterarLocal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_chip_escuro"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:text="Alterar"
+                        android:textColor="@color/branco"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Barra de pesquisa -->
+                <LinearLayout
+                    android:id="@+id/searchBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_search"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/texto_secundario" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Buscar furadeira, serra, escada..."
+                        android:textColor="@color/texto_secundario" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/TituloSecao"
+                android:text="Categorias" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCategorias"
+                tools:itemCount="6"
+                tools:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/item_categoria"
+                tools:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/tvTituloDestaques"
+                style="@style/TituloSecao"
+                android:text="Em destaque" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDestaques"
+                tools:itemCount="3"
+                tools:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/item_ferramenta"
+                tools:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingHorizontal="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/tvTituloProximos"
+                    style="@style/TituloSecao"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Perto de você" />
+
+                <TextView
+                    android:id="@+id/tvRaio"
+                    tools:text="até 30 km"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/texto_secundario"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress"
+                tools:visibility="gone"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="24dp" />
+
+            <TextView
+                android:id="@+id/tvVazio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:gravity="center"
+                android:textColor="@color/texto_secundario"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProximos"
+                tools:itemCount="4"
+                tools:layoutManager="GridLayoutManager"
+                tools:listitem="@layout/item_ferramenta"
+                tools:spanCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:paddingHorizontal="10dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

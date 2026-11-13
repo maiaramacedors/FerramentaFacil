@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Identidade visual: laranja (principal) e amarelo (secundária) -->
+    <color name="laranja">#FF7A00</color>
+    <color name="laranja_escuro">#E65C00</color>
+    <color name="laranja_claro">#FFE8D1</color>
+    <color name="amarelo">#FFC107</color>
+    <color name="amarelo_claro">#FFF6D6</color>
+
+    <color name="fundo">#F5F6F8</color>
+    <color name="branco">#FFFFFF</color>
+    <color name="texto_primario">#1F2933</color>
+    <color name="texto_secundario">#6B7280</color>
+    <color name="cinza_borda">#E5E7EB</color>
+    <color name="cinza_placeholder">#ECEEF1</color>
+
+    <color name="verde">#16A34A</color>
+    <color name="vermelho">#DC2626</color>
+    <color name="azul">#2563EB</color>
+    <color name="cinza_status">#6B7280</color>
+
+    <color name="branco_translucido">#33FFFFFF</color>
+    <color name="preto_translucido">#99000000</color>
+</resources>

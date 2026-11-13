@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/branco"
+        android:elevation="2dp"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Anunciar ferramenta" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Fotos -->
+            <TextView
+                style="@style/Rotulo"
+                android:layout_marginTop="0dp"
+                android:text="Fotos da ferramenta *" />
+
+            <TextView
+                style="@style/TextoSecundario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adicione até 5 fotos. A primeira será a capa do anúncio." />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFotos"
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvSemFotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Nenhuma foto adicionada"
+                android:textColor="@color/texto_secundario"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGaleria"
+                    style="@style/Widget.FerramentaFacil.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Galeria"
+                    app:icon="@drawable/ic_image" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCamera"
+                    style="@style/Widget.FerramentaFacil.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="Câmera"
+                    app:icon="@drawable/ic_camera" />
+            </LinearLayout>
+
+            <!-- Informações -->
+            <TextView
+                style="@style/Rotulo"
+                android:text="Informações" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Nome da ferramenta *"
+                app:counterEnabled="true"
+                app:counterMaxLength="80">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLength="80" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCategoria"
+                style="@style/Widget.FerramentaFacil.TextInput.Dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="Categoria *">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/actCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilMarca"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Marca">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilModelo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:hint="Modelo">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etModelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapCharacters" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Descrição *"
+                app:counterEnabled="true"
+                app:counterMaxLength="500"
+                app:helperText="Conte o que acompanha, potência, cuidados de uso...">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDescricao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="500"
+                    android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEstado"
+                style="@style/Widget.FerramentaFacil.TextInput.Dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Estado de conservação *">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/actEstado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilValor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Valor do aluguel por dia *"
+                app:prefixText="R$ "
+                app:suffixText="/ dia">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etValor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789,."
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Localização -->
+            <TextView
+                style="@style/Rotulo"
+                android:text="Localização da ferramenta" />
+
+            <TextView
+                style="@style/TextoSecundario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seu endereço completo NÃO aparece no anúncio. Mostramos apenas cidade, bairro e uma localização aproximada (~1 km). O endereço só é enviado ao locatário depois que você aprovar o aluguel." />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUsarLocalizacao"
+                style="@style/Widget.FerramentaFacil.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Usar minha localização atual"
+                app:icon="@drawable/ic_my_location" />
+
+            <TextView
+                android:id="@+id/tvCoordenadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✓ Localização obtida pelo GPS"
+                android:textColor="@color/verde"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Cidade *"
+                app:placeholderText="Ex.: Indaiatuba - SP">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilBairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Bairro (aparece no anúncio)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBairro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEndereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Endereço de retirada (privado) *"
+                app:placeholderText="Rua, número">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEndereco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress|textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Disponibilidade -->
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/swDisponivel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checked="true"
+                android:text="Disponível para aluguel"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/branco"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPreview"
+            style="@style/Widget.FerramentaFacil.Button.Outlined"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PRÉVIA" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPublicar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="2"
+            android:text="PUBLICAR FERRAMENTA" />
+    </LinearLayout>
+</LinearLayout>

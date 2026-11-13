@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ícone do app para Android 7 (API 24/25). No Android 8+ é usado o ícone adaptativo. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/laranja" />
+            <size android:width="48dp" android:height="48dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="11dp"
+        android:drawable="@drawable/ic_build_white"
+        android:left="11dp"
+        android:right="11dp"
+        android:top="11dp" />
+</layer-list>

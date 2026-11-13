@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/branco"
+        android:elevation="2dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="20dp"
+        android:text="Favoritos"
+        android:textColor="@color/texto_primario"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFavoritos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:padding="6dp" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/tvVazio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableTop="@drawable/ic_favorite_border"
+                android:drawablePadding="12dp"
+                android:drawableTint="@color/laranja"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="Você ainda não favoritou nenhuma ferramenta.\nToque no coração nos detalhes de um anúncio para salvá-lo aqui."
+                android:textColor="@color/texto_secundario"
+                android:visibility="gone" />
+        </FrameLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

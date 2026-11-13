@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="96dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Fotos -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/cinza_placeholder">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vpImagens"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageButton
+                    android:id="@+id/btnVoltar"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="top|start"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/bg_circulo_branco"
+                    android:contentDescription="Voltar"
+                    android:elevation="4dp"
+                    android:src="@drawable/ic_arrow_back" />
+
+                <ImageButton
+                    android:id="@+id/btnFavorito"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/bg_circulo_branco"
+                    android:contentDescription="Favoritar"
+                    android:elevation="4dp"
+                    android:src="@drawable/ic_favorite_border"
+                    app:tint="@color/laranja" />
+
+                <TextView
+                    android:id="@+id/tvContadorImagens"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/bg_chip_escuro"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:textColor="@color/branco"
+                    android:textSize="12sp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/bg_folha_detalhes"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvCategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_chip_laranja"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:textColor="@color/laranja_escuro"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/texto_primario"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMarcaModelo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/texto_secundario"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_star"
+                        app:tint="@color/amarelo" />
+
+                    <TextView
+                        android:id="@+id/tvAvaliacaoFerramenta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:textColor="@color/texto_primario" />
+
+                    <TextView
+                        android:id="@+id/tvEstado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:textColor="@color/texto_secundario" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvPreco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/laranja"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="/ dia"
+                        android:textColor="@color/texto_secundario" />
+                </LinearLayout>
+
+                <!-- Localização aproximada -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_location"
+                            app:tint="@color/laranja" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvLocalizacao"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/texto_primario"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvDistancia"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/texto_secundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnMapa"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mapa"
+                            app:icon="@drawable/ic_map" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    style="@style/Rotulo"
+                    android:text="Descrição" />
+
+                <TextView
+                    android:id="@+id/tvDescricao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="3dp"
+                    android:textColor="@color/texto_primario" />
+
+                <!-- Proprietário -->
+                <TextView
+                    style="@style/Rotulo"
+                    android:text="Proprietário" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardProprietario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivDono"
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/placeholder_pessoa"
+                            app:shapeAppearanceOverlay="@style/ShapeCirculo" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvDonoNome"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/texto_primario"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/ivVerificado"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginStart="4dp"
+                                    android:contentDescription="Perfil verificado"
+                                    android:src="@drawable/ic_verified"
+                                    android:visibility="gone"
+                                    app:tint="@color/azul" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvDonoAvaliacao"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/texto_secundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnConversar"
+                            style="@style/Widget.FerramentaFacil.Button.Outlined"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minHeight="44dp"
+                            android:text="Chat"
+                            app:icon="@drawable/ic_chat" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Período / calendário -->
+                <TextView
+                    android:id="@+id/tvTituloPeriodo"
+                    style="@style/Rotulo"
+                    android:text="Período do aluguel" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSelecionarPeriodo"
+                    style="@style/Widget.FerramentaFacil.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Escolher retirada e devolução"
+                    app:icon="@drawable/ic_event" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardResumo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/amarelo_claro"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:text="Resumo do aluguel"
+                            android:textColor="@color/texto_primario"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="3dp">
+
+                            <TextView
+                                style="@style/ResumoRotulo"
+                                android:text="Retirada" />
+
+                            <TextView
+                                android:id="@+id/tvRetirada"
+                                style="@style/ResumoValor" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="3dp">
+
+                            <TextView
+                                style="@style/ResumoRotulo"
+                                android:text="Devolução" />
+
+                            <TextView
+                                android:id="@+id/tvDevolucao"
+                                style="@style/ResumoValor" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="3dp">
+
+                            <TextView
+                                style="@style/ResumoRotulo"
+                                android:text="Quantidade de dias" />
+
+                            <TextView
+                                android:id="@+id/tvDias"
+                                style="@style/ResumoValor" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="3dp">
+
+                            <TextView
+                                style="@style/ResumoRotulo"
+                                android:text="Valor diário" />
+
+                            <TextView
+                                android:id="@+id/tvValorDiario"
+                                style="@style/ResumoValor" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="8dp"
+                            android:background="@color/amarelo" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/ResumoRotulo"
+                                android:text="Valor total"
+                                android:textColor="@color/texto_primario"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/laranja_escuro"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="O pagamento é combinado diretamente com o proprietário. A reserva só é confirmada após a aprovação dele."
+                            android:textColor="@color/texto_secundario"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Avaliações -->
+                <TextView
+                    style="@style/Rotulo"
+                    android:text="Avaliações da ferramenta" />
+
+                <TextView
+                    android:id="@+id/tvSemAvaliacoes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Esta ferramenta ainda não recebeu avaliações."
+                    android:textColor="@color/texto_secundario" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAvaliacoes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Barra inferior com o botão principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/branco"
+        android:elevation="16dp"
+        android:padding="12dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAlugar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="ALUGAR AGORA"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

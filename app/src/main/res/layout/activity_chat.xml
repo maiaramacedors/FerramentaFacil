@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/branco"
+        android:elevation="2dp"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:subtitleTextColor="@color/laranja" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMensagens"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="10dp" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tvVazio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="32dp"
+            android:text="Nenhuma mensagem ainda.\nTire suas dúvidas sobre a ferramenta, retirada e devolução."
+            android:textColor="@color/texto_secundario"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/branco"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/etMensagem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints="no"
+            android:background="@drawable/bg_search_cinza"
+            android:hint="Digite sua mensagem"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="1000"
+            android:maxLines="4"
+            android:minHeight="48dp"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="10dp" />
+
+        <ImageButton
+            android:id="@+id/btnEnviar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_circulo_laranja"
+            android:contentDescription="Enviar"
+            android:src="@drawable/ic_send"
+            app:tint="@color/branco" />
+    </LinearLayout>
+</LinearLayout>

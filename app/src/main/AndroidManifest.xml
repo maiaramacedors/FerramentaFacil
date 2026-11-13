@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Internet (Firebase) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Localização do usuário (ferramentas próximas) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Notificações locais (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".FerramentaFacilApp"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:roundIcon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FerramentaFacil"
+        tools:targetApi="34">
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.FerramentaFacil.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.LoginActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.CadastroActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.MainActivity" android:exported="false" android:launchMode="singleTop" />
+        <activity android:name=".activity.BuscaActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.DetalhesFerramentaActivity" android:exported="false" />
+        <activity android:name=".activity.CadastrarFerramentaActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.MeusAnunciosActivity" android:exported="false" />
+        <activity android:name=".activity.SolicitacoesActivity" android:exported="false" />
+        <activity android:name=".activity.ChatActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.ConversasActivity" android:exported="false" />
+        <activity android:name=".activity.AvaliarActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.AvaliacoesActivity" android:exported="false" />
+        <activity android:name=".activity.EditarPerfilActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.NotificacoesActivity" android:exported="false" />
+        <activity android:name=".activity.TermosActivity" android:exported="false" />
+
+        <!-- Necessário para a câmera salvar a foto num arquivo do app -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

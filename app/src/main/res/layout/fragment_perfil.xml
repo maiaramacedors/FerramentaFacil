@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- Cabeçalho com foto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="28dp"
+            android:paddingBottom="24dp">
+
+            <FrameLayout
+                android:layout_width="104dp"
+                android:layout_height="104dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivFoto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:padding="2dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder_pessoa"
+                    app:shapeAppearanceOverlay="@style/ShapeCirculo"
+                    app:strokeColor="@color/branco"
+                    app:strokeWidth="3dp" />
+
+                <ImageView
+                    android:id="@+id/btnTrocarFoto"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/bg_circulo_branco"
+                    android:contentDescription="Alterar foto"
+                    android:elevation="4dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_camera"
+                    app:tint="@color/laranja" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/branco"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/branco" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_chip_escuro"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_star"
+                    app:tint="@color/amarelo" />
+
+                <TextView
+                    android:id="@+id/tvAvaliacao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/branco"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Números -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/tvQtdFerramentas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/laranja"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Ferramentas anunciadas" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/tvQtdAlugueis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/laranja"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Aluguéis concluídos" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Dados pessoais -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dados pessoais (visíveis só para você)"
+                    android:textColor="@color/texto_primario"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="12dp"
+                    android:drawableTint="@color/texto_secundario"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/texto_primario" />
+
+                <TextView
+                    android:id="@+id/tvTelefone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:drawablePadding="12dp"
+                    android:drawableTint="@color/texto_secundario"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/texto_primario" />
+
+                <TextView
+                    android:id="@+id/tvEndereco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/ic_location"
+                    android:drawablePadding="12dp"
+                    android:drawableTint="@color/texto_secundario"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/texto_primario" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Opções -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/optMeusAnuncios"
+                    style="@style/OpcaoPerfil"
+                    android:drawableStart="@drawable/ic_list"
+                    android:text="Meus anúncios" />
+
+                <TextView
+                    android:id="@+id/optSolicitacoes"
+                    style="@style/OpcaoPerfil"
+                    android:drawableStart="@drawable/ic_inbox"
+                    android:text="Solicitações recebidas" />
+
+                <TextView
+                    android:id="@+id/optConversas"
+                    style="@style/OpcaoPerfil"
+                    android:drawableStart="@drawable/ic_chat"
+                    android:text="Minhas conversas" />
+
+                <TextView
+                    android:id="@+id/optHistorico"
+                    style="@style/OpcaoPerfil"
+                    android:drawableStart="@drawable/ic_history"
+                    android:text="Histórico de aluguéis" />
+
+                <TextView
+                    android:id="@+id/optAvaliacoes"
+                    style="@style/OpcaoPerfil"
+                    android:drawableStart="@drawable/ic_star"
+                    android:text="Avaliações recebidas" />
+
+                <TextView
+                    android:id="@+id/optEditar"
+                    style="@style/OpcaoPerfil"
+                    android:drawableStart="@drawable/ic_edit"
+                    android:text="Editar perfil" />
+
+                <TextView
+                    android:id="@+id/optSenha"
+                    style="@style/OpcaoPerfil"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:text="Alterar senha" />
+
+                <TextView
+                    android:id="@+id/optTermos"
+                    style="@style/OpcaoPerfil"
+                    android:drawableStart="@drawable/ic_description"
+                    android:text="Termos de uso e privacidade" />
+
+                <TextView
+                    android:id="@+id/optSair"
+                    style="@style/OpcaoPerfil"
+                    android:drawableStart="@drawable/ic_logout"
+                    android:drawableTint="@color/vermelho"
+                    android:text="Sair da conta"
+                    android:textColor="@color/vermelho" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

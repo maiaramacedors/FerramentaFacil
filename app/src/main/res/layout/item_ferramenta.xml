@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Card de ferramenta (Home, Busca e Favoritos) -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="124dp">
+
+            <ImageView
+                android:id="@+id/ivFoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Foto da ferramenta"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder_ferramenta" />
+
+            <TextView
+                android:id="@+id/tvCategoria"
+                tools:text="Elétricas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|start"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_chip_escuro"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:textColor="@color/branco"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tvIndisponivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_indisponivel"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="Indisponível"
+                android:textColor="@color/branco"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvNome"
+                tools:text="Furadeira de impacto Bosch 650W"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:minLines="2"
+                android:textColor="@color/texto_primario"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPreco"
+                tools:text="R$ 25,00/dia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/laranja"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_location"
+                    app:tint="@color/texto_secundario" />
+
+                <TextView
+                    android:id="@+id/tvDistancia"
+                tools:text="2,3 km"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/texto_secundario"
+                    android:textSize="11sp" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_star"
+                    app:tint="@color/amarelo" />
+
+                <TextView
+                    android:id="@+id/tvAvaliacao"
+                tools:text="4,8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@color/texto_primario"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

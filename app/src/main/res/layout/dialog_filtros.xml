@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtros"
+            android:textColor="@color/texto_primario"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/Rotulo"
+            android:text="Categoria" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipsCategorias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true" />
+
+        <TextView
+            style="@style/Rotulo"
+            android:text="Preço por dia (R$)" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPrecoMin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Mínimo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPrecoMin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789,."
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPrecoMax"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:hint="Máximo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPrecoMax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789,."
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvRaio"
+            style="@style/Rotulo"
+            android:text="Distância máxima: sem limite" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderRaio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="5"
+            android:valueFrom="0"
+            android:valueTo="100" />
+
+        <TextView
+            android:id="@+id/tvNotaMin"
+            style="@style/Rotulo"
+            android:text="Avaliação mínima do proprietário: qualquer" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderNota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="0.5"
+            android:valueFrom="0"
+            android:valueTo="5" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swDisponiveis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="Mostrar somente ferramentas disponíveis" />
+
+        <TextView
+            style="@style/Rotulo"
+            android:text="Período do aluguel" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPeriodo"
+            style="@style/Widget.FerramentaFacil.Button.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Qualquer data"
+            app:icon="@drawable/ic_event" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLimpar"
+                style="@style/Widget.FerramentaFacil.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Limpar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAplicar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Aplicar" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

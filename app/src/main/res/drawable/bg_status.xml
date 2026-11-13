@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Etiqueta de status; a cor é aplicada em tempo de execução (backgroundTint) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/branco" />
+    <corners android:radius="10dp" />
+</shape>

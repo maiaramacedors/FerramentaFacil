@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <!-- Logotipo -->
+    <FrameLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_circulo_branco"
+        android:elevation="8dp">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_build"
+            app:tint="@color/laranja" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvNomeApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/app_name"
+        android:textColor="@color/branco"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="@string/slogan"
+        android:textColor="@color/branco"
+        android:textSize="15sp" />
+
+    <!-- Ilustração de ferramentas -->
+    <LinearLayout
+        android:id="@+id/ilustracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_bolt"
+            app:tint="@color/branco" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_domain"
+            app:tint="@color/branco" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_eco"
+            app:tint="@color/branco" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_car"
+            app:tint="@color/branco" />
+    </LinearLayout>
+
+    <!-- Animação de carregamento -->
+    <ProgressBar
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="40dp"
+        android:indeterminateTint="@color/branco" />
+</LinearLayout>

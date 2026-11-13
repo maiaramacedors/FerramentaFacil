@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cabeçalho laranja com cantos inferiores arredondados (Home e Perfil) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="315"
+        android:endColor="@color/laranja_escuro"
+        android:startColor="@color/laranja" />
+    <corners
+        android:bottomLeftRadius="28dp"
+        android:bottomRightRadius="28dp" />
+</shape>
